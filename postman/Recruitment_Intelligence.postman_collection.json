@@ -1,0 +1,12 @@
+{
+  "info": {"name": "Recruitment Intelligence API", "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"},
+  "variable": [{"key": "baseUrl", "value": "http://127.0.0.1:8000"}, {"key": "access", "value": ""}, {"key": "refresh", "value": ""}],
+  "item": [
+    {"name": "1 Login", "request": {"method": "POST", "header": [{"key":"Content-Type","value":"application/json"}], "body":{"mode":"raw","raw":"{\"username\":\"hr\",\"password\":\"Assessment@123\"}"}, "url":"{{baseUrl}}/api/auth/login/"}},
+    {"name": "2 Refresh", "request": {"method": "POST", "header": [{"key":"Content-Type","value":"application/json"}], "body":{"mode":"raw","raw":"{\"refresh\":\"{{refresh}}\"}"}, "url":"{{baseUrl}}/api/auth/refresh/"}},
+    {"name": "3 List candidates", "request": {"method": "GET", "header": [{"key":"Authorization","value":"Bearer {{access}}"}], "url":"{{baseUrl}}/api/candidates/"}},
+    {"name": "4 Screening results", "request": {"method": "GET", "header": [{"key":"Authorization","value":"Bearer {{access}}"}], "url":"{{baseUrl}}/api/screening-results/"}},
+    {"name": "5 ML prediction", "request": {"method": "POST", "header": [{"key":"Authorization","value":"Bearer {{access}}"},{"key":"Content-Type","value":"application/json"}], "body":{"mode":"raw","raw":"{\"experience_months\":12,\"notice_period_days\":15,\"expected_salary\":550000,\"skill_match_score\":0.75}"}, "url":"{{baseUrl}}/api/ml/predict/"}},
+    {"name": "6 Logout", "request": {"method": "POST", "header": [{"key":"Authorization","value":"Bearer {{access}}"},{"key":"Content-Type","value":"application/json"}], "body":{"mode":"raw","raw":"{\"refresh\":\"{{refresh}}\"}"}, "url":"{{baseUrl}}/api/auth/logout/"}}
+  ]
+}

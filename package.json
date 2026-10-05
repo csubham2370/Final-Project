@@ -1,0 +1,7 @@
+{
+  "name": "recruitment-intelligence-portal-assets",
+  "private": true,
+  "dependencies": {
+    "bootstrap": "5.3.8"
+  }
+}

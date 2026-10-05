@@ -1,0 +1,9 @@
+candidate_name,email,phone,college,applied_role,skills,experience_months,notice_period_days,expected_salary,resume_text,portfolio_url,historical_selection_status,skill_match_score
+Ananya Rao,ananya.rao@example.com,+919876543210,City Engineering College,PY-DJ,"Python, Django, PostgreSQL, REST",14,15,550000,"Python developer with Django REST and PostgreSQL projects",https://example.com/ananya,selected,1.00
+Rohan Sen,rohan.sen@example.com,+919812345678,National Institute of Technology,PY-DJ,"Python, Flask, SQL",8,30,480000,"Built Python APIs and completed SQL coursework",https://example.com/rohan,rejected,0.25
+Meera Shah,meera.shah@example.com,+919999111222,Western Technical University,PY-DJ,"Python, Django, Redis, Celery",18,20,650000,"Django internship using Celery Redis and REST APIs",https://example.com/meera,selected,0.75
+Kabir Nair,kabir.nair@example.com,+919700000001,Institute of Computing,PY-DJ,"Java, HTML, CSS",4,60,400000,"Fresher with web development coursework",https://example.com/kabir,rejected,0.00
+Ishita Bose,ishita.bose@example.com,+919700000002,Metropolitan College,PY-DJ,"Python, Django, Pandas, scikit-learn",12,0,600000,"Machine learning project deployed through Django",https://example.com/ishita,selected,0.50
+Arjun Das,arjun.das@example.com,+919700000003,State Engineering College,PY-DJ,"Python, Django, NLTK, PostgreSQL",10,30,525000,"Resume screening prototype with NLTK and Django",https://example.com/arjun,selected,0.75
+Sara Khan,sara.khan@example.com,+919700000004,Central University,PY-DJ,"Python, SQL, NumPy",6,45,450000,"Data analysis and Python automation projects",https://example.com/sara,rejected,0.25
+Dev Patel,dev.patel@example.com,+919700000005,Technology Academy,PY-DJ,"Python, Django, DRF, JWT",16,10,700000,"Built secured DRF APIs with JWT authentication",https://example.com/dev,selected,0.50

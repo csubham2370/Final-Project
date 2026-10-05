@@ -1,0 +1,22 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>{% block title %}Recruitment Intelligence{% endblock %}</title>
+  <link rel="stylesheet" href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}">
+  <link rel="stylesheet" href="{% static 'css/app.css' %}">
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm">
+  <div class="container"><a class="navbar-brand fw-bold" href="{% url 'dashboard' %}">Recruitment Intelligence</a>
+  {% if user.is_authenticated %}<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#portalNav" aria-controls="portalNav" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+  <div class="collapse navbar-collapse" id="portalNav"><ul class="navbar-nav ms-auto align-items-lg-center gap-lg-2"><li class="nav-item"><a class="nav-link" href="{% url 'dashboard' %}">Dashboard</a></li><li class="nav-item"><a class="nav-link" href="{% url 'candidate-list' %}">Candidates</a></li>{% if user.role == 'HR' or user.role == 'ADMIN' %}<li class="nav-item"><a class="nav-link" href="{% url 'batch-upload' %}">Upload</a></li>{% endif %}{% if user.role == 'ADMIN' %}<li class="nav-item"><a class="nav-link" href="{% url 'admin:index' %}">Admin</a></li><li class="nav-item"><a class="nav-link" href="{% url 'swagger-ui' %}">API docs</a></li>{% endif %}<li class="nav-item"><span class="badge text-bg-secondary">{{ user.get_role_display }}</span></li><li class="nav-item"><form method="post" action="{% url 'logout' %}">{% csrf_token %}<button class="btn btn-outline-light btn-sm">Sign out</button></form></li></ul></div>{% endif %}</div>
+</nav>
+<main class="container py-5">
+  {% for message in messages %}<div class="alert {% if message.tags == 'error' %}alert-danger{% else %}alert-{{ message.tags|default:'info' }}{% endif %} alert-dismissible fade show" role="alert">{{ message }}<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button></div>{% endfor %}
+  {% block content %}{% endblock %}
+</main>
+<script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+<script src="{% static 'js/app.js' %}" defer></script>
+</body></html>

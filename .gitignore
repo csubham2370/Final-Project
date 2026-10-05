@@ -1,0 +1,59 @@
+# Environment variables and local secrets
+.env
+.env.*
+!.env.example
+
+# Python environments and bytecode
+.venv/
+venv/
+env/
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Django local state
+db.sqlite3
+db.sqlite3-journal
+staticfiles/
+*.log
+
+# User-uploaded and generated media; retain media/sample_candidate.svg
+media/batches/
+media/results/
+media/resumes/
+media/candidate_images/
+
+# Celery and Redis local state
+celerybeat-schedule
+celerybeat.pid
+dump.rdb
+
+# Generated machine-learning artifacts
+artifacts/*.joblib
+artifacts/*.keras
+artifacts/*.h5
+artifacts/*.png
+
+# Test and coverage output
+.pytest_cache/
+.coverage
+.coverage.*
+htmlcov/
+coverage.xml
+
+# JavaScript dependencies
+node_modules/
+
+# Local PostgreSQL data directories
+pgdata/
+.postgres/
+
+# Editors and operating-system files
+.DS_Store
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Local archives
+*.zip

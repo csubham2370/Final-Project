@@ -1,0 +1,15 @@
+ASSUMPTIONS
+- Job roles are created by an administrator before candidate files are uploaded. The applied_role value must match a JobRole code.
+- Email is the cross-batch candidate identity, so re-uploading an email updates the existing record instead of creating a duplicate.
+- PostgreSQL and Redis run locally and are not provisioned by this project.
+
+ML, NLP, AND DEEP LEARNING
+- train_model.py removes duplicates/useless identity columns, imputes missing numeric values, caps IQR outliers, scales values, selects features, compares Logistic Regression with Random Forest, prints metrics, saves the best ROC-AUC model, and draws a Matplotlib ROC curve.
+- The secured /api/ml/predict/ endpoint loads the saved model. Before training, a deterministic documented rule fallback keeps the prototype testable; it is identified in the response.
+- The NLTK module tokenizes text, performs POS tagging, produces a simple frequency vector, and calculates required-skill overlap. If NLTK data is not downloaded, regex tokenization keeps uploads safe while clearly marking POS values UNKNOWN.
+- train_ann.py is a minimal executable TensorFlow/Keras classifier using the same four numeric features.
+
+KNOWN LIMITATIONS
+- The prototype does not parse binary PDF/DOCX resume contents; resume text and optional files are stored separately.
+- ML quality depends on representative labelled data; the supplied sample is demonstrative, not production training data.
+- Celery progress updates are row-level and therefore trade throughput for transparent evaluator feedback.
